@@ -65,27 +65,21 @@
 <div id="submitAnswerDiv">
     <h1>Gratulerer, du klarte det!</h1>
     <h2>Registrer deg og vær med i trekningen av noe awesome</h2>
-    <form action="#">
+    <form action="/highscore/create" method="POST">
         <p id="showTimeUsed">
             
         </p>
         <input type="hidden" name="timeused" id="timeused">
         <label for="name">Name</label><br/>
-        <input id="name">
+        <input id="name" name="name">
         <br/>
         <label for="phone">Mobil</label><br/>
-        <input id="phone">
+        <input id="phone" name="mobile">
         <br/>
         <label for="email">Epost</label><br/>
-        <input id="email">
+        <input id="email" name="email">
         <br/>
         <button id="submitAnswer">Send inn</button>
+        <input type='hidden' name='_csrf' value='<%= _csrf %>'>
     </form>
-</div>
-
-<div style="margin-top: 50px;">
-    <img src="images/visma-logo.png" width="250px" style="float: right;" />
-    <span class="signature" style="font-family: agencyfb; color: #626262;">
-        Visma Consulting 2013
-    </span>
 </div>

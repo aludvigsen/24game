@@ -1,0 +1,20 @@
+<h1>High<span>score</span></h1>
+
+<div>
+    <table class="table table-striped" style="font-family: agencyfb;font-size: 40px;color: #626262; text-transform:uppercase;">                
+        <% _.each(scores, function(score, i) { %>
+        	<% if(i == 0) { %>
+        	<tr style="font-size: 2em;">
+        	<% } else if(i == 1) { %>
+        	<tr style="font-size: 1.5em;">
+        	<% } else if(i ==2) { %>
+        	<tr style="font-size: 1.25em;">
+        	<% } else { %>
+        	<tr>
+        	<% } %>
+        		<td><%= score.name %></td>
+        		<td><%= score.timeused %></td>
+        	</tr>
+        <% }) %>
+    </table>
+</div>

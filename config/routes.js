@@ -26,9 +26,21 @@ module.exports.routes = {
   // default view engine) your home page.
   // 
   // (Alternatively, remove this and add an `index.html` file in your `assets` directory)
-  '/': {
-    view: 'home'
-  },
+	'/': {
+		view: 'home'
+	},
+	'post /highscore/create': {
+	    controller: 'Highscore',
+	    action: 'create'
+	},
+	'/users': {
+	    controller: 'Users',
+	    action: 'index'
+	},
+	'post /users/clear': {
+	    controller: 'Users',
+	    action: 'destroy'
+	}
 
 
   // Custom routes here...

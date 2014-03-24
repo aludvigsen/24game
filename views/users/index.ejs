@@ -1,0 +1,47 @@
+<h1>Users</h1>
+
+<div>
+    <table class="table table-striped">                
+    	<tr>
+    		<th># Plass</th>
+    		<th>Navn</th>
+    		<th>Mobil</th>
+    		<th>Epost</th>
+    		<th>Tid</th>
+    	</tr>
+        <% _.each(users, function(user, i) { %>
+        	<tr>
+        		<td><%= i + 1 %></td>
+        		<td><%= user.name %></td>
+        		<td><%= user.mobile %></td>
+        		<td><%= user.email %></td>
+        		<td><%= user.timeused %></td>
+        	</tr>
+        <% }) %>
+    </table>
+    <button data-toggle="modal" href="#confirmDelete" class="btn btn-danger" type="button">Slett alle brukere</button>
+</div>
+
+<!-- Modal newPerson -->
+<div class="modal fade" id="confirmDelete">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="confirmDeleteModal" class="form-horizontal" action="/users/clear" method="POST">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" style="font-family: sans-serif;">Ønsker du å slette alle brukere?</h4>
+				</div>
+				<div class="modal-body">				
+				<p>
+					<strong>MERK!</strong> Om du fjerner alle brukere vil de bli slettet for alltid
+				</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Avbryt</button>
+					<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+					<button type="submit" class="btn btn-danger">Slett alt!</button>
+				</div>
+			</form>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
