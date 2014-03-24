@@ -28,12 +28,17 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
 
+	<link rel="stylesheet" href="/libs/jquery-ui/css/ui-lightness/jquery-ui-1.10.3.custom.min.css">
+    <link rel="stylesheet" href="/libs/bootstrap/css/bootstrap.min.css">
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
+  	<div class="container">
+    	<%- body %>
+    </div>
 
 
 
@@ -59,6 +64,7 @@
     -->
 
     <!--TEMPLATES-->
+    
     <!--TEMPLATES END-->
 
 
@@ -84,8 +90,23 @@
           + Use a different preprocessor, like TypeScript
 
     -->
+	<script src="libs/jquery/jquery-2.0.2.js"></script>
+    <script src="libs/jquery-ui/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="libs/touchPunch/jquery.ui.touch-punch.min.js"></script>
+    <script src="/thegame/card.js"></script>
+    <script src="/thegame/24game.js"></script>
+    <script src="/thegame/gameLoop.js"></script>
+    <script src="/thegame/app.js"></script>
 
     <!--SCRIPTS-->
+    
     <!--SCRIPTS END-->
+
+    <script>
+		$(document).ready(function () {
+		    visma.app.main($(".container"));
+		    visma.app.startGame();
+		});
+	</script>
   </body>
 </html>

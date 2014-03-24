@@ -1,0 +1,267 @@
+@font-face {
+	font-family: 'agencyfb';
+	src: url('../font/agencyfb-bold.ttf')  format('truetype');
+}
+
+body {
+	/* background: #efe5cc; */
+	background: url(../images/bg.png);
+}
+
+.container {
+	width: 960px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: agencyfb;
+}
+
+h1 {
+	font-size: 4em;
+	opacity: 0.6;
+	padding-left: 20px;
+	display: inline-block;
+}
+
+h1 span {
+	color: #d50641;
+}
+
+/* How To Play */
+#howToPlay {
+	padding: 0px 25px;
+	border: 1px solid #000;
+	background-color: #424242;
+	color: white;
+	box-shadow: inset 1px 3px 5px #2E2E2E;
+}
+
+/* SUBMIT FORM */
+#submitAnswerDiv {
+	background: rgba(0, 0, 0, .1);
+	border: 1px solid #BDBDBD;
+
+	h1 {
+		font-size: 4em;
+		width: 100%;
+		margin: 25px 0;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 2em;
+		padding-left: 20px;
+		width: 100%;
+		margin-top: -25px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #FFF;
+		text-shadow: 2px 2px 5px #978585;
+	}
+
+	form {
+		font-family: agencyfb;
+		width: 500px;
+		margin: auto 250px;
+		margin-top: 40px;
+
+		label {
+			font-size: 1.5em;
+			text-transform: uppercase;
+			color: #867474;
+		}
+
+		input {
+			width: 100%;
+			padding: 7px;
+			font-size: 2em;
+			color: #d50641;
+			text-transform: uppercase;
+			border: none;
+			-moz-box-shadow: 1px 1px 3px #887D7D;
+			-webkit-box-shadow: 1px 1px 3px #887D7D;
+			box-shadow: 1px 1px 3px #887D7D;
+		}
+	}
+}
+
+#submitAnswer {
+	padding: 4px 20px;
+	border: none;
+	margin: 30px 0px;
+	background-color: #d50641;
+	font-family: agencyfb;
+	font-size: 2em;
+	color: white;
+	text-transform: uppercase;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+#showTimeUsed {
+	font-size: 2.4em;
+	background-color: #424242;
+	padding: 5px 10px;
+	color: white;
+}
+
+#showTimeUsed span {
+	/*color: #d50641;*/
+	color: white;
+}
+
+/* CARDS */
+.cardLgBtn {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	width: 190px;
+	height: 190px;
+	display: inline-block;
+}
+
+.cardLgBtn:nth-child(-n+3) {
+	margin-right: 66px;
+}
+
+.cardLgBtn span {
+	font-family: agencyfb;
+	color: white;
+	font-size: 9em;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+.cardSmBtn {
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	width: 113px;
+	height: 113px;
+	display: inline-block;
+	position: relative;
+
+	span {
+		font-family: agencyfb;
+		color: white;
+		line-height: 1;
+		font-size: 7em;
+		position: absolute;
+
+		&.plus {
+			font-size: 8em;
+			top: -5%;
+			left: 26%;
+		}
+		&.minus {
+			font-size: 8em;
+			top: -9%;
+			left: 35%;
+		}
+		&.multiply {
+			top: 22%;
+			left: 29%;
+		}
+		&.divide {
+			top: 6%;
+			left: 30%;
+		}
+		&.pleft {
+			top: 0%;
+			left: 35%;
+		}
+		&.pright {
+			top: 0%;
+			left: 42%;
+		}
+	}
+}
+
+.cardSmBtn:nth-child(-n+5) {
+	margin-right: 52px;
+}
+
+/* COLORS */
+.hearts { background: #8e44ad; }
+.diamonds { background: #d35400; }
+.clubs { background: #16a085; }
+.spades { background: #34495e; }
+.lightgrey { background: #95a5a6; }
+.darkgrey { background: #7f8c8d; }
+
+/* ANSWER BOX */
+#answerbox {
+	padding: 0 10px;
+	/*
+	width: 1040px;
+	margin-left: -20px;
+	*/
+	width: 960px;
+	height: auto;
+	min-height: 107px;
+	overflow: hidden;
+	background-color: rgba(255,255,255, .3);
+	border-bottom: 5px solid #287cb3;
+	-moz-box-shadow: inset 1px 1px 10px #aaa;
+	-webkit-box-shadow: inset 1px 1px 10px #aaa;
+	box-shadow: inset 1px 1px 10px #aaa;
+
+	.cardLgBtn {
+		width: 80px;
+		height: 80px;
+		margin: 11px;
+		float: left;
+		span {
+			font-size: 4.2em;
+		}
+	}
+
+	.cardSmBtn {
+		width: 80px;
+		height: 80px;
+		margin: 11px;
+		float: left;
+		span {
+			font-size: 5.5em;
+		}
+	}
+}
+
+.cardLgBtn.ui-sortable-helper span {
+	font-size: 4.2em;
+}
+
+.cardSmBtn.ui-sortable-helper span {
+	font-size: 5.5em;
+}
+
+/* Game Btns */
+.gameButtons {
+	float: right;
+	margin-top: 35px;
+	a {
+		padding: 4px 20px;
+		margin-left: 15px;
+		background-color: #d50641;
+		font-family: agencyfb;
+		font-size: 2em;
+		color: white;
+		-moz-box-shadow:    1px 1px 3px #000;
+	  	-webkit-box-shadow: 1px 1px 3px #000;
+	  	box-shadow:         1px 1px 3px #000;
+	}	
+}
+
+.sortable-placeholder {
+	width: 80px;
+	height: 80px;
+	border: 1px dotted #aaa;
+	margin: 10px;
+	float: left;
+}
+
+.ui-draggable { -ms-touch-action: none; }
