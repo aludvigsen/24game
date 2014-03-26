@@ -41,11 +41,7 @@ visma.app = (function (GameLoop, game, $) {
                 console.log(timeUsed);
                 clearAndSetView("submit");
             } else {
-                console.log("wrong answer, restarting the game");
-                var feilmelding = "Ai, ai, ai! Feil svar...";
-                $infobox.html("<h3>" + feilmelding + "</h3>");
-                $infobox.show().delay(2000).fadeOut();
-                startGame();
+                wrongAnswer();
             }
         });
 
@@ -56,6 +52,22 @@ visma.app = (function (GameLoop, game, $) {
         $("#howtoplayBtn").on("click", function () {
             $("#howToPlay").slideToggle();
         });
+    }
+
+    function wrongAnswer() {
+    	console.log("wrong answer, restarting the game");
+        var fv = [
+        	'Noooo!', 
+        	'Wrong.', 
+        	'Ah, try again!', 
+        	'Still wrong, buddy.', 
+        	'Not there yet', 
+        	'24, the name of the game'
+        ];
+		var randomFeilmelding = fv[Math.floor(fv.length * Math.random())];
+        $infobox.html("<h1 id='wrongAnswer'>" + randomFeilmelding + "</h1>");
+        $infobox.show().delay(1000).fadeOut();
+        startGame();
     }
 
     function startGame() {
