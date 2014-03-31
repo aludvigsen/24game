@@ -29,7 +29,7 @@ visma.app = (function (GameLoop, game, $) {
         gameLoop = new GameLoop(game);
 
         $submitBtn.on("click", function () {
-            console.log("got answer", $answerValue.find("span").text());
+            //console.log("got answer", $answerValue.find("span").text());
             gameLoop.answer($answerValue.find("span").text());
             var isCorrect = gameLoop.isCorrectAnswer();
             var timeUsed = gameLoop.timeUsed();
@@ -38,7 +38,7 @@ visma.app = (function (GameLoop, game, $) {
                 var tidMelding = showMeTheTime(timeUsed);
                 $showTimeUsed.html("Tid brukt: <span>" + tidMelding + "</span>");
                 $timeused.val(eval(timeUsed.s + "+" + timeUsed.m + "*60"));
-                console.log(timeUsed);
+                //console.log(timeUsed);
                 clearAndSetView("submit");
             } else {
                 wrongAnswer();
@@ -55,7 +55,7 @@ visma.app = (function (GameLoop, game, $) {
     }
 
     function wrongAnswer() {
-    	console.log("wrong answer, restarting the game");
+    	//console.log("wrong answer, restarting the game");
         var fv = [
         	'Noooo!', 
         	'Wrong.', 
@@ -84,7 +84,7 @@ visma.app = (function (GameLoop, game, $) {
     }
 
     function clearAndSetView(view) {
-        console.log("change view ", view);
+        //console.log("change view ", view);
         if ("game" === view) {
             $checkAnswer.unbind();
             $submitAnswerDiv.hide();
