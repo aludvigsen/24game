@@ -116,7 +116,7 @@ visma.app = (function (GameLoop, game, $) {
                         $(this).remove();
                     }
                 });
-
+                $($(this).data()["ui-sortable"].currentItem[0]).removeClass('dragginItNow');
             },
             placeholder: "sortable-placeholder"
         });
@@ -132,6 +132,10 @@ visma.app = (function (GameLoop, game, $) {
                     left: Math.floor(this.clientWidth / 2),
                     top: Math.floor(this.clientHeight / 2)
                 });
+                $(this).addClass('dragginItNow');
+            },
+            stop: function (event, ui) {
+            	$(this).removeClass('dragginItNow');
             }
         });
 
